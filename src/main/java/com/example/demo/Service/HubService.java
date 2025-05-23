@@ -72,7 +72,7 @@ public class HubService {
         trackingRepository.save(trackIngEntity);
 
         Long mobileId=orderDto.getMobileId();
-        ResponseEntity<Long> hubId=restTemplate.getForEntity("https://product-0gme.onrender.com/getHubId/{mobileId}",Long.class, mobileId);
+        ResponseEntity<Long> hubId=restTemplate.getForEntity("https://product-0gme.onrender.com/product/getHubId/{mobileId}",Long.class, mobileId);
 
         HubEntity hubEntity=mapper.orderDTOTOHubEntity(orderDto);
         hubEntity.setHubId(hubId.getBody());
