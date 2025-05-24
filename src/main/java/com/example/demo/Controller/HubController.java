@@ -28,6 +28,12 @@ public class HubController {
         return hubService.getAllOrders();
     }
 
+    @GetMapping("/cronjob")
+    public String dummyForCronjob()
+    {
+        return "Cronjob ran successfully";
+    }
+
     @PutMapping("/updateOrderStatus")
     public String updateOrderStatus(@RequestBody OrderStatusUpdateDTo orderStatusUpdateDTo)
     {
